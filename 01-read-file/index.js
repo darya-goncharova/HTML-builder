@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-fs.readFile(
+const readFile = fs.readFile(
   path.join(__dirname, 'text.txt'),
   'utf-8',
   (err, data) => {
@@ -10,3 +10,4 @@ fs.readFile(
   }
 
 );
+readFile.on('data', chunk => console.log(chunk));
